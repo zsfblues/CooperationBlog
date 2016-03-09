@@ -1,0 +1,140 @@
+body
+{
+    overflow-x:hidden;
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    background-color: whitesmoke;
+}
+
+#to_top
+{
+    position: absolute;
+    z-index: 4;
+    left: 32cm;
+    top: 14cm;
+    opacity: 0.8;
+    cursor: pointer;
+    display:none;
+}
+
+#wrapper
+{
+    position: absolute;
+    z-index: 4;
+    left: 15%;
+    top: 29px;
+    opacity: 0.6;
+}
+
+#fame a
+{
+    font-weight: bolder;
+    color: #2b9fff;
+    background-color: white;
+}
+
+#logo
+{
+    position: absolute;
+    z-index: 2;
+    top: 90px;
+    left: 15%;
+    width: 960px;
+    background-color: #ffffef;
+    height: 345px;
+}
+
+#logo #fameimg
+{
+    position: absolute;
+    left: 750px;
+    top: 20px;
+}
+
+#logo #red
+{
+    position: absolute;
+    left: 705px;
+    top: 40px;
+    font-size: 35px;
+    font-style: italic;
+    color: #00DFFF;
+}
+
+#logo #person
+{
+    position: absolute;
+    left: 795px;
+    top: 120px;
+    font-size: 35px;
+    font-style: italic;
+    color: #00DFFF;
+}
+
+#logo #hall
+{
+    position: absolute;
+    left: 705px;
+    top: 200px;
+    font-size: 35px;
+    font-style: italic;
+    color: #00DFFF;
+}
+
+.horhr
+{
+    color: #e4e4e4;
+    border: 1px solid
+}
+
+.vertihr
+{
+    position: absolute;
+    width: 1px;
+    color: #e4e4e4;
+    border: 1px solid;
+    left: 1.5cm;
+    top: 0;
+}
+
+#infotable a
+{
+    color: #f47f31;
+    text-decoration: none;
+    outline: none;
+    font-size: 14px;
+}
+
+#briefdiv
+{
+    width: 100%;
+    text-shadow: 1px 1px 5px #f47f31;
+    background-color: inherit;
+    letter-spacing: 1px;
+}
+
+#briefdiv p
+{
+    text-indent: 1.7cm;
+}
+
+#briefdiv h3
+{
+    margin-left: 7%;
+}
+
+#briefdiv p
+{
+    margin-left: 10%;
+}
+
+#messagediv
+{
+    position: absolute;
+    z-index: 2;
+    left: 15%;
+    right: 15%;
+    top: 12cm;
+    height: auto;
+    width: 960px;
+    background-color: #ffffef;
+}

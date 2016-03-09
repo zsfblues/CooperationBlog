@@ -1,0 +1,91 @@
+body
+{
+    background-color: #e4e4e4;
+    overflow-x:hidden;
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+}
+
+#messagediv
+{
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 860px;
+    background-color: white;
+}
+
+#messagediv #friendtable
+{
+    margin-left: 20px;
+}
+
+#friend:hover, #messagediv:hover
+{
+    box-shadow: 10px 10px 5px #A8ABA8;
+}
+
+#friend:active, #messagediv:active
+{
+    box-shadow: none;
+}
+
+.horhr
+{
+    color: #e4e4e4;
+    border: 1px solid
+}
+
+#friendtable a
+{
+    color: #279dff;
+    text-decoration: none;
+    outline: none;
+    font-size: 16px;
+}
+
+#friend
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 860px;
+    height: 361px;
+    background: url("../../images/friend.jpg");
+}
+
+#friend #search
+{
+    font-style: italic;
+    font-size: 23px;
+    color: #efb900;
+    margin-left: 600px;
+    padding-top: 80px;
+}
+
+#searchtxt
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    font-style:normal;
+    font-variant:normal;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-weight:normal;
+    padding: 4px;
+    font-size:15px;
+    outline: invert none medium;
+    border-radius: 3px;
+    margin-right:8px;
+    border: 1px solid #ccc;
+}
+
+#searchtxt:focus
+{
+    border: 1px solid #fafafa;
+    box-shadow: 0 0 5px #007eff;
+}
+
+#friend #friendinfo
+{
+    display: none;
+    padding-left: 180px;
+}

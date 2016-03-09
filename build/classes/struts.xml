@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+        <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+        <constant name="struts.devMode" value="false" />
+        <constant name="struts.configuration.xml.reload" value="true"> </constant>
+
+    <package name="default" namespace="/" extends="struts-default">
+
+                <default-action-ref name="notFound" />
+
+                <action name="register" class="com.zsf.action.RegisterAction">
+                        <result type="redirect">/registerAndLogin.jsp</result>
+                </action>
+
+                <action name="login" class="com.zsf.action.LoginAction">
+                        <result name="error">/registerAndLogin.jsp</result>
+                        <result type="chain">myblog</result> 
+                </action>
+
+                <action name="logout" class="com.zsf.action.LogoutAction">
+                        <result type="redirect">/Myindex.jsp</result>
+                </action>
+
+                <action name="showlastblog" class="com.zsf.action.dynamicnewsaction.ShowLastestArticleAction">
+                        <result>/WEB-INF/index.jsp</result>
+                </action>
+
+                <action name="famous" class="com.zsf.action.famousaction.FamousAction">
+                        <result>/WEB-INF/myblog/myFriends.jsp</result>
+                </action>
+
+                <action name="search" class="com.zsf.action.UserSearchAction">
+                        <result>/WEB-INF/searchPage.jsp</result>
+                </action>
+
+                <action name="searchbydate" class="com.zsf.action.SearchByDateAction">
+                        <result>/WEB-INF/searchPage.jsp</result>
+                </action>
+
+                <action name="updatepassword" class="com.zsf.action.FindMyPasswordAction">
+                        <result type="redirect">/registerAndLogin.jsp</result>
+                </action>
+
+                <action name="showfame" class="com.zsf.action.famousaction.FamousAction">
+                        <result>/WEB-INF/famousarea/hallOfFame.jsp</result>
+                </action>
+
+                <action name="myitnews" class="com.zsf.action.itnewsaction.ShowITNewsAction">
+                        <result>/WEB-INF/itnews/itNews.jsp</result>
+                </action>
+
+        </package>
+        
+        <package name="myajax" namespace="/" extends="json-default">
+
+                <interceptors>
+                        <interceptor name="loginstatus" class="com.zsf.interceptors.LoginStatusInterceptor"> </interceptor>
+                        <interceptor name="replyaction" class="com.zsf.interceptors.ReplyActionInterceptor"> </interceptor>
+                        <interceptor-stack name="ajaxInterceptorStack">
+                                <interceptor-ref name="defaultStack"> </interceptor-ref>
+                                <interceptor-ref name="loginstatus"> </interceptor-ref>
+                                <interceptor-ref name="replyaction"> </interceptor-ref>
+                        </interceptor-stack>
+                </interceptors>
+
+                <default-action-ref name="notFound" />
+
+                <action name="checkcode" class="com.zsf.action.GetCheckCodeAction" method="getCheckcode"> </action>
+
+                <action name="emailvalidation" class="com.zsf.action.UnregistedEmailAction">
+                        <result type="json"> </result>
+                </action>
+
+                <action name="admire" class="com.zsf.action.AjaxAdmireAction" method="getAdmire">
+                        <interceptor-ref name="ajaxInterceptorStack"> </interceptor-ref>
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                </action>
+
+                <action name="savablog" class="com.zsf.action.myblogaction.SaveBlogAction">
+                        <result type="json"> </result>
+                </action>
+
+                <action name="uploadlifeimg" class="com.zsf.action.mylifeaction.UploadShareImgAction">
+                        <interceptor-ref name="ajaxInterceptorStack"/>
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result type="json"> </result>
+                </action>
+
+                <action name="showuploadimg" class="com.zsf.action.mylifeaction.ShowUploadImgAction">
+                        <interceptor-ref name="ajaxInterceptorStack"/>
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result type="json"> </result>
+                </action>
+
+                <action name="ajaxcheckpasswod" class="com.zsf.action.myblogaction.AjaxToCheckPassword">
+                        <result type="json"> </result>
+                </action>
+
+                <action name="submitmyinfo" class="com.zsf.action.myblogaction.AjaxSubmitMyInfoAction">
+                        <interceptor-ref name="ajaxInterceptorStack"/>
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result type="json">
+                                <!-- 设置参数修改root的默认返回对象为action(有ModelDriven对象时使用) -->
+                                <param name="root">action</param>
+                        </result>
+                </action>
+
+                <action name="checkregistdate" class="com.zsf.action.AjaxToCheckRegistDate">
+                        <result type="json"> </result>
+                </action>
+
+                <action name="searchfriend" class="com.zsf.action.myblogaction.AjaxToGetFriendInfo">
+                        <result type="json"> </result>
+                </action>
+
+        </package>
+        
+        <package name="myinterceptor" namespace="/" extends="struts-default">
+
+                <!-- 注册拦截器 -->
+                <interceptors>
+                        <interceptor name="loginstatus" class="com.zsf.interceptors.LoginStatusInterceptor"> </interceptor>
+                        <interceptor name="replyaction" class="com.zsf.interceptors.ReplyActionInterceptor"> </interceptor>
+
+                        <!-- 注册拦截器栈，并同时指定使用几个 已注册 拦截器 -->
+                        <interceptor-stack name="interceptorStack">
+                                <interceptor-ref name="defaultStack"> </interceptor-ref>
+                                <interceptor-ref name="loginstatus"> </interceptor-ref>
+                                <interceptor-ref name="replyaction"> </interceptor-ref>
+                        </interceptor-stack>
+                </interceptors>
+
+                <!-- 该包下的所有 Action 默认使用的拦截器 -->
+                <default-interceptor-ref name="interceptorStack" > </default-interceptor-ref>
+
+                <!-- 登陆用户进入 我的博客 专栏 -->
+                <action name="myblog" class="com.zsf.action.myblogaction.BlogAction">
+                        <result name="login">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result>/WEB-INF/myblog/myBlog.jsp</result>
+                </action>
+
+                <action name="edit" class="com.zsf.action.myblogaction.EditBlogAction">
+                        <result>/WEB-INF/myblog/editBlog.jsp </result>
+                        <result type="redirect" name="login">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                </action>
+
+                <action name="showmyfriend" class="com.zsf.action.myblogaction.ShowFriendsAction">
+                        <result type="redirect" name="login">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result>/WEB-INF/myblog/myFriends.jsp</result>
+                </action>
+
+                <action name="concern" class="com.zsf.action.myblogaction.ConcernSomebodyAction">
+                        <result type="redirect" name="login">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result type="chain">showmyfriend</result>
+                </action>
+
+                <action name="cancelconcern" class="com.zsf.action.myblogaction.CancelConcernAction">
+                        <result type="redirect" name="login">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result type="chain">showmyfriend</result>
+                </action>
+
+                <action name="submitblog" class="com.zsf.action.myblogaction.SubmitMyBlogAction">
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result type="chain">myblog</result>
+                </action>
+
+                <action name="findarticle" class="com.zsf.action.myblogaction.FindMyArticleAction">
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result>/WEB-INF/myblog/showBlogDetail.jsp</result>
+                </action>
+                
+                <action name="viewblog" class="com.zsf.action.dynamicnewsaction.ViewBlogAction">
+                        <result type="chain">reply</result>
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                </action>
+
+                <action name="reply" class="com.zsf.action.ReplyAction">
+                        <result name="blog_page">/WEB-INF/homepage/viewBlog.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result type="redirect" name="login">/registerAndLogin.jsp</result>
+                </action>
+                
+                <action name="deleteblog" class="com.zsf.action.myblogaction.DeleteBlogAction">
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result type="chain">myblog</result>
+                </action>
+
+                <action name="deleteimg" class="com.zsf.action.PhotoAction.DeleteImgAction">
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result>/WEB-INF/photos/photoWall.jsp</result>
+                </action>
+
+                <action name="uploadfiles" class="com.zsf.action.PhotoAction.UploadImgAction">
+                        <interceptor-ref name="fileUpload">
+                                <param name="allowedExtensions">.jpg, .gif, .png, .bmp</param>
+                                <param name="maximumSize"> 10485760 </param> <!-- 10M大小限制 -->
+                        </interceptor-ref>
+                        <interceptor-ref name="interceptorStack"/>
+
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result name="input" type="redirectAction">uploadfiles</result>
+                        <result>/WEB-INF/photos/photoWall.jsp</result>
+                </action>
+
+                <action name="download" class="com.zsf.action.PhotoAction.DownloadImgAction">
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result name="stop_reply" type="redirect">/Myindex.jsp</result>
+                        <result type="stream">
+                                <!-- 会自动调用其中的getContentType方法 -->
+                                <param name="contentType">${contentType}</param>
+                                <!-- 设置下载时附件的打开方式 -->
+                                <param name="contentDisposition">attachment;filename=${imgname}</param>
+                        </result>
+                </action>
+
+                <action name="recordmylife" class="com.zsf.action.mylifeaction.GoToJspAction">
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result>/WEB-INF/mylife/recordMyLife.jsp</result>
+                </action>
+
+                <action name="submitlifeblog" class="com.zsf.action.mylifeaction.SubmitLifeArticleAction">
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result>/WEB-INF/mylife/recordMyLife.jsp </result>
+                </action>
+            
+                <action name="editinfo" class="com.zsf.action.myblogaction.EditMyInfoAction">
+                        <result name="login" type="redirect">/registerAndLogin.jsp</result>
+                        <result type="redirect" name="stop_reply">/Myindex.jsp</result>
+                        <result>/WEB-INF/myblog/myInfo.jsp </result>
+                </action>
+        </package>
+
+        <!-- 显示404页面信息 -->
+        <package name="my404" extends="struts-default">
+                <default-action-ref name="notFound" />
+                <action name="notFound">
+                        <result>/WEB-INF/404.jsp</result>
+                </action>
+        </package>
+
+</struts>

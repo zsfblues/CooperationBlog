@@ -1,0 +1,157 @@
+body
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    background-color: #CFC;
+    background: radial-gradient(100% 120% at bottom right, #CFC, #ffe3df);
+    overflow-x: hidden;
+}
+
+#blogtitle
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    font-style:normal;
+    font-variant:normal;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-weight:normal;
+    padding: 4px;
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    outline: invert none medium;
+    margin-right:8px;
+    line-height: 26px;
+    margin-left: 23%;
+}
+
+#blogtextarea
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    height: auto;
+    min-width: 55%;
+    max-width: 55%;
+    border-radius: 6px;
+    outline: invert none medium;
+    overflow-x: hidden;
+    margin-left: 23.5%;
+}
+
+#parent_reply_div
+{
+    position: absolute;
+    z-index: 4;
+    top: auto;
+    left: 10.5cm;
+    padding: 0;
+}
+
+#reply_table
+{
+    position: absolute;
+    z-index: 4;
+    top: 4.5cm;
+    left: 50px;
+    width: 319px;
+}
+
+#replydiv
+{
+    margin-top: 0.7cm;
+    height: 100px;
+    box-shadow: 0 0 5px aqua;
+    border: 1px outset;
+    width: 500px;
+    margin-left: 0;
+    overflow-y: scroll;
+}
+
+#subreplydiv
+{
+    margin-top: 0.8cm;
+    height: 85px;
+    box-shadow: 0 0 5px #13c7d8;
+    border: 1px outset;
+    width: 400px;
+    margin-left: 100px;
+    overflow-y: scroll;
+}
+
+.subreply_content
+{
+    display: none;
+    position: absolute;
+    top: auto;
+    left: 25%;
+    width: 40%;
+    padding: 6px 16px;
+    border: 10px solid #D6E9F1;
+    background-color: white;
+    z-index:51;
+    min-height: 200px;
+    overflow-y: scroll;
+}
+
+.black_overlay
+{
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color:#f5f5f5;
+    z-index:50;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+
+#subreply_textarea
+{
+    min-height: 140px;
+    max-height: 140px;
+    overflow-y: scroll;
+    box-shadow: 0px 0px 4px aqua;
+    border-width: 2px;
+    border-style: solid;
+    width: 531px;
+}
+
+#to_top
+{
+    position: absolute;
+    z-index: 4;
+    left: 32cm;
+    top: 14cm;
+    opacity: 0.8;
+    cursor:pointer;
+    display:none;
+}
+
+.mybuttondiv
+{
+    position: fixed;
+    z-index: 4;
+    top: 243px;
+    width: 175px;
+    left: 0;
+    height: 71px;
+    transition-property: background-color, left;
+    transition-duration: 1.2s;
+}
+
+#buttonfont
+{
+    display: none;
+}
+
+#ramdoncanvas
+{
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 31px;
+}
+
+#allreplydiv
+{
+    margin-top: 10cm;
+    margin-left: 30%;
+}

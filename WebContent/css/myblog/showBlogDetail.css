@@ -1,0 +1,78 @@
+body
+{
+    background-color: #CFC;
+    background: linear-gradient(120deg, #CFC, #ffe3df);
+    overflow-x: hidden;
+}
+
+#blogtitle, #tag
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    font-style:normal;
+    font-variant:normal;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-weight:normal;
+    padding: 4px;
+    font-size:17px;
+    outline: invert none medium;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    min-width: 40%;
+    line-height: 26px;
+    margin-left: 27%;
+    margin-right: 27%;
+    z-index: 2;
+}
+
+#blogtextarea
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    height: auto;
+    border-radius: 6px;
+    outline: invert none medium;
+    overflow-x: hidden;
+    z-index: 2;
+}
+
+#blogtitle:focus, #tag:focus
+{
+    border: 1px solid #fafafa;
+    box-shadow: 0 0 5px #007eff;
+}
+
+#mycanvas
+{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 31px;
+}
+
+#all_content_div
+{
+    outline: none;
+    position: absolute;
+    z-index: 3;
+    width: 56%;
+    left: 22%;
+    right: 22%;
+}
+
+#messagediv
+{
+    position: fixed;
+    z-index: 20;
+    top: 4cm;
+    display: none;
+    width: 400px;
+    height: 200px;
+    transition-property: width, height;
+    transition-duration: 2s;
+    background-color: #ff8d7c;
+    font-size: 50px;
+    color: #fafad7;
+    border: 5px dotted #fff5bb;
+    text-align: center;
+    line-height:200px;
+}

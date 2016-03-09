@@ -1,0 +1,157 @@
+body
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    background-color: whitesmoke;
+}
+
+#wrapper
+{
+    position: absolute;
+    z-index: 4;
+    left: 15%;
+    right: 15%;
+    top: 29px;
+    opacity: 0.6;
+}
+
+#to_top
+{
+    position: absolute;
+    z-index: 4;
+    left: 32cm;
+    top: 14cm;
+    opacity: 0.8;
+    cursor:pointer;
+    display:none;
+}
+
+#mylife a
+{
+    font-weight: bolder;
+    color: #2b9fff;
+    background-color: white;
+}
+
+.contentdiv
+{
+    position: absolute;
+    z-index: 2;
+    top: 15%;
+    left: 15%;
+    width: 960px;
+    background-color: #f6f3d9;
+}
+
+#header
+{
+    width: 960px;
+    height: 274px;
+    background: url("../../images/time.jpg");
+}
+
+#header #headerword
+{
+    padding-top: 1.5cm;
+    padding-left: 2cm;
+    font-size: 25px;
+    color: #e59501;
+    letter-spacing: 4px;
+    font-style: italic;
+}
+
+#newlifeword
+{
+    width: 100%;
+    background-color: #f6f3d9;
+    height: auto;
+}
+
+#title, #lead, #sharecontent
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    font-style:normal;
+    font-variant:normal;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-weight:normal;
+    padding: 4px;
+    font-size:17px;
+    outline: invert none medium;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    line-height: 26px;
+}
+
+#title:focus, #lead:focus, #sharecontent:focus
+{
+    border: 1px solid #fafafa;
+    box-shadow: 0px 0px 5px #007eff;
+}
+
+#editdiv
+{
+    width: 100%;
+    background-color: #f6f3d9;
+}
+
+#editdiv #title
+{
+    width: 61%;
+    background-color:  #ffffef;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#editdiv #lead
+{
+    background-color:  #ffffef;
+    margin-left: 20%;
+    margin-right: 20%;
+    min-width: 61%;
+    max-width: 61%;
+    min-height: 135px;
+}
+
+#editdiv #sharecontent
+{
+    min-height: 300px;
+    height: auto;
+    width: 60%;
+    background-color:  #ffffef;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#editdiv #uploader
+{
+    margin-left: 20%;
+}
+
+#sign
+{
+    z-index: 3;
+    margin-left: 47%;
+    width: 45px;
+    font-size: 45px;
+    color: #b4e552;
+}
+
+#previewdiv
+{
+    position: absolute;
+    z-index: 50;
+    display: none;
+    left: 0;
+    right: 0;
+    background-color: #a7a7a7;
+}
+
+#previewdiv #hidebtn
+{
+    position: fixed;
+    z-index: 51;
+    color: blue;
+    right: 0;
+    top: 0;
+    background-color: white;
+}

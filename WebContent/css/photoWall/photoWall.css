@@ -1,0 +1,96 @@
+body
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    background-color: whitesmoke;
+}
+
+#photots a
+{
+    font-weight: bolder;
+    color: #2b9fff;
+    background-color: white;
+}
+
+#wrapper
+{
+    position: absolute;
+    z-index: 4;
+    left: 15%;
+    right: 15%;
+    top: 29px;
+    opacity: 0.6;
+}
+
+#to_top
+{
+    position: absolute;
+    z-index: 4;
+    left: 32cm;
+    top: 14cm;
+    opacity: 0.8;
+    cursor:pointer;
+    display:none;
+}
+
+#photodiv
+{
+    position: absolute;
+    z-index: 2;
+    top: 2.3cm;
+    left: 15%;
+    width: 960px;
+    background: url("../../images/bg_body.jpg");
+}
+
+.uploaddiv
+{
+    position: absolute;
+    z-index: 3;
+    top: 1.5cm;
+    right: 30%;
+    left: 30%;
+    width: 500px;
+}
+
+#photodiv span
+{
+    position: absolute;
+    top: 1cm;
+    right: 60%;
+    left: 30%;
+}
+#imagelistdiv
+{
+    position: absolute;
+    z-index: 3;
+    top: 3cm;
+    width: 100%;
+    height: auto;
+}
+
+a:hover
+{
+    color: red;
+    cursor: pointer;
+}
+
+#previewdiv
+{
+    position: absolute;
+    z-index: 50;
+    display: none;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background-color: #a7a7a7;
+}
+
+#previewdiv #hidelink
+{
+    position: fixed;
+    z-index: 51;
+    color: blue;
+    right: 0;
+    top: 0;
+    background-color: white;
+}

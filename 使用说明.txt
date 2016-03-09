@@ -1,0 +1,2 @@
+1.克隆项目后进入src\com\zsf\dbUtils的Connect.java文件中修改数据库的密码
+2.创建一个数据库，将myblog.sql文件的表结构导入到数据库中

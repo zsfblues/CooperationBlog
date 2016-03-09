@@ -1,0 +1,229 @@
+body
+{
+    overflow:hidden;
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+}
+
+#background
+{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    margin-left: -0.6%;
+    margin-top: -0.6%;
+}
+
+#border
+{
+    position: absolute;
+    z-index: 2;
+    left: 34%;
+    top: 230px;
+    height: 346px;
+}
+
+.title
+{
+    width:500px;
+    height:55px;
+}
+
+#register
+{
+    color: #ffc015;
+    float: left;
+    width: 220px;
+    height: 55px;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 52px;
+    background-image: url("../../images/bg_body.jpg");
+}
+
+#login
+{
+    float: left;
+    color: black;
+    width: 220px;
+    height: 55px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 52px;
+    background-image: url("../../images/bg_body.jpg");
+}
+
+#login:hover, #register:hover
+{
+    color: red;
+}
+
+#mylogindiv
+{
+    height: 280px;
+    width: 440px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-image: url("../../images/bg_body.jpg");
+    background-repeat: repeat-x;
+}
+
+#myregisterdiv
+{
+    height: 310px;
+    width: 440px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-image: url("../../images/bg_body.jpg");
+    background-repeat: repeat-x;
+}
+
+#myregisterdiv #register_form
+{
+    padding-left: 1.5cm;
+    padding-top: 2cm;
+}
+
+#mylogindiv #login_form
+{
+    padding-left: 1.5cm;
+    padding-top: 1.2cm;
+}
+
+#logo
+{
+    position: absolute;
+    z-index: 2;
+    font-weight: 400;
+    font-size: 85px;
+    color: white;
+    padding-left: 80px;
+    left: 35%;
+    top: 83px;
+    width: 430px;
+    height: 77px;
+}
+
+.annotation
+{
+    position: absolute;
+    z-index: 2;
+    float: left;
+    width: 1px;
+    font-weight: 200;
+    font-size: 20px;
+    left: 35%;
+    padding-left: 190px;
+    top: 72px;
+    color: white;
+}
+
+.motto
+{
+    position: absolute;
+    z-index:2;
+    left: 35%;
+    padding-left: 97px;
+    top: 200px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 12px;
+}
+
+#subtext
+{
+    position: absolute;
+    z-index: 2;
+    left: 35%;
+    padding-left: 365px;
+    top: 150px;
+    width: 87px;
+    height: 34px;
+    font-size: 30px;
+    font-weight: lighter;
+    color: white;
+}
+
+.username, .myusername, .password, .mypassword, .repassword, .email, .checkcode
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    font-style:normal;
+    font-variant:normal;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-weight:normal;
+    padding: 4px;
+    font-size:15px;
+    outline: invert none medium;
+    border-radius: 3px;
+    margin-right:8px;
+    border: 1px solid #ccc;
+}
+.username:focus, .myusername:focus, .password:focus, .mypassword:focus, .repassword:focus, .email:focus, .checkcode:focus
+{
+    border: 1px solid #fafafa;
+    box-shadow: 0px 0px 5px #007eff;
+}
+
+#myregisterdiv
+{
+    display: none;
+}
+
+.reflectsign
+{
+    position: absolute;
+    z-index: 2;
+    color: #0fb2ff;
+    font-size: 21px;
+    font-style: italic;
+    font-weight: lighter;
+    width: 204px;
+    text-transform: uppercase;
+    padding-left: 55px;
+    top: 59px;
+    -webkit-box-reflect: below -8px -webkit-gradient(linear, left top,left bottom, from(rgba(0,0,0,0)), to(rgba(255,255,255,0.5)));
+}
+
+#findpassworddiv
+{
+    height: 240px;
+    width: 440px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-image: url("../../images/bg_body.jpg");
+    display: none;
+}
+
+#findpassworddiv table
+{
+    padding-top: 1.7cm;
+    padding-left: 1cm;
+}
+
+#findemail, #newpassword, #datepicker
+{
+    font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun, monospace;
+    font-style:normal;
+    font-variant:normal;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-weight:normal;
+    padding: 4px;
+    font-size:15px;
+    outline: invert none medium;
+    border-radius: 3px;
+    margin-right:8px;
+    border: 1px solid #ccc;
+}
+
+#findemail:focus, #newpassword:focus, #datepicker:focus
+{
+    border: 1px solid #fafafa;
+    box-shadow: 0 0 5px #007eff;
+}
